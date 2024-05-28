@@ -10,12 +10,11 @@ import (
 
 var (
 	// DefaultCaller 打印出调用日志方法文件名和行号，例如 caller=logger/log_test.go:11
-	DefaultCaller = Caller(3)
+	DefaultCaller = Caller(4)
 
 	// DefaultTimestamp 打印时间戳
 	DefaultTimestamp = Timestamp(time.RFC3339)
 )
-
 
 type Valuer func(ctx context.Context) interface{}
 
@@ -47,8 +46,7 @@ func Timestamp(layout string) Valuer {
 	}
 }
 
-func
-bindValues(ctx context.Context, keyAndVals []interface{}) {
+func bindValues(ctx context.Context, keyAndVals []interface{}) {
 	for i := 1; i < len(keyAndVals); i += 2 {
 		if v, ok := keyAndVals[i].(Valuer); ok {
 			keyAndVals[i] = v(ctx)

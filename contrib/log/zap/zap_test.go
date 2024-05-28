@@ -38,7 +38,7 @@ func TestLogger(t *testing.T) {
 	defer func() { _ = logger.Close() }()
 
 	zlog := log.NewHelper(logger)
-
+	//log.SetLogger(log.With(logger, "ts", log.DefaultTimestamp, "caller", log.DefaultCaller))
 	zlog.Debugw("log", "debug")
 	zlog.Infow("log", "info")
 	zlog.Warnw("log", "warn")
