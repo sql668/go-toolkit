@@ -1,4 +1,4 @@
-module github.com/sql668/go-toolkit/contrib/logger/zap
+module github.com/sql668/go-toolkit/contrib/log/zap
 
 go 1.18
 
@@ -8,3 +8,7 @@ require (
 )
 
 require go.uber.org/multierr v1.11.0 // indirect
+
+replace (
+	github.com/sql668/go-toolkit => ../../../
+)

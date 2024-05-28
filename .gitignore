@@ -22,4 +22,5 @@ go.work
 
 .idea
 
-.ds
+.DS_Store
+
